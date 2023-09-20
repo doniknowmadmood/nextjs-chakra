@@ -11,6 +11,13 @@ import { defineStyle, defineStyleConfig } from "@chakra-ui/react";
 //   defaultProps: {},
 // });
 
+const baseStyle = defineStyle({
+  background: "#000",
+  color: "white",
+  size: "md",
+  variant: "solid",
+});
+
 const outline = defineStyle({
   border: "2px dashed",
   color: "white",
@@ -28,6 +35,30 @@ const outline = defineStyle({
   transition: "all 0.6s ease-in-out",
 });
 
+const gradient = defineStyle({
+  background: "linear-gradient(180deg, #000000 0%, #ccc 100%)",
+  backgroundSize: "400% 400%",
+  backgroundPosition: "0% 50%",
+  transition: "all 0.6s ease-in-out",
+  _hover: {
+    backgroundPosition: "20% 50%",
+    background: "linear-gradient(180deg, #ccc 0%, #000 100%)",
+  },
+  _disabled: {
+    backgroundPosition: "0% 50%",
+  },
+});
+
+const solid = defineStyle({
+  backgroundColor: "#ccc",
+  color: "white",
+  transition: "all 0.6s ease-in-out",
+  _hover: {
+    color: "gray.800",
+    backgroundColor: "#ccc",
+  },
+});
+
 const xl = defineStyle({
   fontSize: "xl",
   px: "6",
@@ -36,6 +67,11 @@ const xl = defineStyle({
 });
 
 export const buttonTheme = defineStyleConfig({
-  sizes: { xl },
-  variants: { outline },
+  baseStyle: {
+    fontWeight: "bold",
+    textTransform: "uppercase",
+    borderRadius: "20px",
+  },
+  variants: { outline, gradient, solid },
+  defaultProps: { variant: "solid", size: "lg" },
 });
