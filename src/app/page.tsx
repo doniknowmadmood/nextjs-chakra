@@ -19,6 +19,12 @@ export default function Home() {
         <Button m="20px" variant="outline">
           Click Me
         </Button>
+        <Text>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate
+          quas eum necessitatibus error expedita neque mollitia iste totam
+          dolor, quod magnam vero a facilis explicabo repellat et accusantium
+          aspernatur impedit!
+        </Text>
       </Flex>
     </Container>
   );
